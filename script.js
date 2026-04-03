@@ -89,5 +89,5 @@ const pusher = new Pusher('a7544f5eacb1f30eb5d7', {
 // El canal del director (donde todos los iPads mandan sus respuestas)
 const directorChannel = pusher.subscribe('chat-director');
 directorChannel.bind('nuevo-mensaje', function(data) {
-    appendMessage(`CÁMARA ${data.camara_id || '?' }`, data.texto, 'received');
+    appendMessage(`CÁMARA ${data.camara_id}`, data.texto, 'received');
 });
