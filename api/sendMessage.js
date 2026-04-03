@@ -8,23 +8,21 @@ const pusher = new Pusher({
   useTLS: true
 });
 
-export default async function handler(req, res) {
-  // Solo permitimos peticiones POST
+module.exports = async function handler(req, res) {
   if (req.method === 'POST') {
     const { target, mensaje } = req.body;
     
     try {
-        // Disparamos el mensaje al canal específico que pidió el frontend
         await pusher.trigger(target, "nuevo-mensaje", {
           texto: mensaje
         });
         
         res.status(200).json({ success: true });
     } catch (error) {
-        console.error(error);
+        console.error("Error al enviar a Pusher:", error);
         res.status(500).json({ error: "Error interno conectando con Pusher" });
     }
   } else {
     res.status(405).json({ error: "Método no permitido" });
   }
-}
+};
