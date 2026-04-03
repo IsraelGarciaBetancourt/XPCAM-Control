@@ -14,7 +14,8 @@ module.exports = async function handler(req, res) {
     
     try {
         await pusher.trigger(target, "nuevo-mensaje", {
-          texto: mensaje
+            texto: mensaje,
+            camara_id: req.body.camara_id
         });
         
         res.status(200).json({ success: true });
