@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IVCAM Killer - Talkback</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://js.pusher.com/8.2.0/pusher.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>🎙️ Control de Cámaras</h1>
+        
+        <p class="label">1. SELECCIONA EL DESTINO:</p>
+        <div class="camera-selectors">
+            <button class="cam-btn active" data-cam="1">Cámara 1</button>
+            <button class="cam-btn" data-cam="2">Cámara 2</button>
+            <button class="cam-btn" data-cam="3">Cámara 3</button>
+            <button class="cam-btn" data-cam="4">Cámara 4</button>
+        </div>
+
+        <p class="label">2. MENSAJES RÁPIDOS:</p>
+        <div class="quick-actions">
+            <button class="quick-btn">Mucha luz, bájale ☀️</button>
+            <button class="quick-btn">Haz un plano cerrado 🔍</button>
+            <button class="quick-btn">Abre la toma 🔭</button>
+            <button class="quick-btn">¡Vas en 5 segundos! ⏱️</button>
+        </div>
+
+        <p class="label">3. CHAT EN VIVO:</p>
+        <div class="chat-container">
+            <div id="chatWindow" class="chat-window">
+                <div class="message-system">Selecciona una cámara para enviar instrucciones</div>
+            </div>
+            
+            <div class="input-area">
+                <input type="text" id="messageInput" placeholder="Escribe un mensaje..." autocomplete="off">
+                <button id="sendBtn">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                        <path d="M1.101 21.757L23.8 12.028 1.101 2.3l.011 7.912 13.623 1.816-13.623 1.817-.011 7.912z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
