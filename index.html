@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IVCAM Killer - Talkback</title>
+    <title>XPCAM Control</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://js.pusher.com/8.2.0/pusher.min.js"></script>
 </head>
 <body>
     <div class="container">
         <h1>🎙️ Control de Cámaras</h1>
-        
+
         <p class="label">1. SELECCIONA EL DESTINO:</p>
         <div class="camera-selectors">
             <button class="cam-btn active" data-cam="1">Cámara 1</button>
@@ -32,12 +32,13 @@
             <div id="chatWindow" class="chat-window">
                 <div class="message-system">Selecciona una cámara para enviar instrucciones</div>
             </div>
-            
+
             <div class="input-area">
                 <input type="text" id="messageInput" placeholder="Escribe un mensaje..." autocomplete="off">
                 <button id="sendBtn" aria-label="Enviar mensaje">
                     <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-                        <path d="M1.101 21.757L23.8 12.028 1.101 2.3l.011 7.912 13.623 1.816-13.623 1.817-.011 7.912z"></path>
+                        <path d="M1.101 21.757L23.8 12.028 1.101 2.3l.011 7.912 13.623 1.816-13.623 1.817-.011 7.912z">
+                        </path>
                     </svg>
                 </button>
             </div>
@@ -46,4 +47,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
