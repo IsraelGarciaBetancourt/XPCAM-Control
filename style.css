@@ -19,9 +19,9 @@ body {
     margin: 0;
     display: flex;
     justify-content: center;
-    /* Optimización para móviles: ocupa toda la pantalla */
-    align-items: stretch; 
-    height: 100dvh; 
+    align-items: stretch;
+    /* CLAVE 1: min-height permite que el body crezca verticalmente si el contenido lo exige */
+    min-height: 100dvh;
 }
 
 .container {
@@ -40,21 +40,36 @@ body {
         align-items: center;
         padding: 40px 20px;
     }
+
     .container {
         border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        height: 90vh; /* Alto máximo en PC */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        height: 90vh;
+        /* Alto máximo en PC */
     }
 }
 
-h1 { text-align: center; margin-top: 0; color: var(--danger); font-size: 1.5rem;}
-.label { color: var(--text-secondary); font-size: 0.85em; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;}
+h1 {
+    text-align: center;
+    margin-top: 0;
+    color: var(--danger);
+    font-size: 1.5rem;
+}
+
+.label {
+    color: var(--text-secondary);
+    font-size: 0.85em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
 
 /* --- BOTONES Y CONTROLES --- */
-.camera-selectors, .quick-actions {
+.camera-selectors,
+.quick-actions {
     display: grid;
-    /* Magia responsive: se adapta de 1 a varias columnas según el espacio */
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); 
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
     gap: 10px;
     margin-bottom: 20px;
 }
@@ -74,7 +89,10 @@ button {
     text-align: center;
 }
 
-button:hover, button:active { background-color: #3a3a3c; }
+button:hover,
+button:active {
+    background-color: #3a3a3c;
+}
 
 .cam-btn.active {
     background-color: var(--accent);
@@ -90,8 +108,9 @@ button:hover, button:active { background-color: #3a3a3c; }
     background-color: var(--chat-bg);
     overflow: hidden;
     border: 1px solid #2c2c2e;
-    flex: 1; /* Ocupa el espacio restante */
-    min-height: 0; /* Necesario para que el scroll funcione en flexbox */
+    flex: 1;
+    /* CLAVE 2: Asegura un tamaño mínimo usable para el chat en pantallas divididas */
+    min-height: 240px;
 }
 
 .chat-window {
@@ -101,8 +120,7 @@ button:hover, button:active { background-color: #3a3a3c; }
     display: flex;
     flex-direction: column;
     gap: 12px;
-    /* Fondo limpio para no distraer en producción */
-    background-color: var(--chat-bg); 
+    background-color: var(--chat-bg);
 }
 
 .message {
@@ -112,7 +130,7 @@ button:hover, button:active { background-color: #3a3a3c; }
     font-size: 15px;
     line-height: 1.4;
     word-wrap: break-word;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .message-sent {
@@ -144,8 +162,13 @@ button:hover, button:active { background-color: #3a3a3c; }
     font-weight: 600;
 }
 
-.message-sent .message-header { color: #53bdeb; }
-.message-received .message-header { color: #ff5252; }
+.message-sent .message-header {
+    color: #53bdeb;
+}
+
+.message-received .message-header {
+    color: #ff5252;
+}
 
 /* --- ENTRADA DE TEXTO --- */
 .input-area {
@@ -163,7 +186,7 @@ button:hover, button:active { background-color: #3a3a3c; }
     border: none;
     background-color: #2a3942;
     color: white;
-    font-size: 16px; /* 16px evita que iOS haga auto-zoom al enfocar el input */
+    font-size: 16px;
     outline: none;
 }
 
@@ -176,6 +199,7 @@ button:hover, button:active { background-color: #3a3a3c; }
     flex-shrink: 0;
 }
 
-.input-area button#sendBtn:hover, .input-area button#sendBtn:active {
+.input-area button#sendBtn:hover,
+.input-area button#sendBtn:active {
     background-color: #008f6f;
 }
